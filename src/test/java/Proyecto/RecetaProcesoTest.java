@@ -1,12 +1,14 @@
 package Proyecto;
 import  org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+
+import java.sql.SQLOutput;
 import java.util.function.Predicate;
 
 public class RecetaProcesoTest {
     private Receta[] setupData(){
         return new Receta[]{
-                new Receta(101,"pollo asado", 5, 50, 60, "comida", "pollo, verduras, sal"),
+                new Receta(101,"pollo asado", 5, 50, 15, "comida", "pollo, verduras, sal"),
                 new Receta(102, "Boneless BBQ", 15, 120, 30, "Snack", "pollo,BBQ"),
                 new Receta(103, "papas a la fracesa", 2, 10, 30, "Snack", "papas, sal,huevo,harina,aceite"),
                 new Receta(104, "helado de napolitano",  8, 80, 120, "Postre","leche,vainilla, chocolate"),
@@ -46,7 +48,10 @@ public class RecetaProcesoTest {
         Receta[] recipes = setupData();
         Predicate<Receta> isQuick = r -> r.getTiempoPreparacion() <= 30;
         Receta[] filtred = filtroReceta.filter(recipes, isQuick);
-        assertEquals(2,filtred.length,"estas recetas son rapidas");
+        System.out.println("---Filtrado(time)---");
+        System.out.println(java.util.Arrays.toString(filtred));
+        assertEquals(3,filtred.length,"estas recetas son rapidas");
+
     }
 
     @Test
@@ -54,6 +59,8 @@ public class RecetaProcesoTest {
         Receta[] recipes = setupData();
         Predicate<Receta> isSnack = r -> r.getTags().contains("Snack");
         Receta[] filtred  = filtroReceta.filter(recipes, isSnack);
+        System.out.println("---Filtrado(tags)---");
+        System.out.println(java.util.Arrays.toString(filtred));
         assertEquals(2,filtred.length,"estas recetas son snacks");
     }
 }

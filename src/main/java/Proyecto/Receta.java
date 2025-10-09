@@ -1,6 +1,5 @@
 package Proyecto;
-import java.time.LocalDateTime;
-import java.util.Arrays;
+
 public class Receta implements Comparable<Receta> {
     private int idReceta;
     private String nombreReceta;
@@ -11,7 +10,7 @@ public class Receta implements Comparable<Receta> {
     private String ingredientes;
 
 
-    public Receta(int idReceta, String nombreReceta, int like, int favoritos, int tiempoPreparacion, String tags, String ingredientes) {
+    public Receta(int idReceta, String nombreReceta, int likes, int favoritos, int tiempoPreparacion, String tags, String ingredientes) {
         this.idReceta = idReceta;
         this.nombreReceta = nombreReceta;
         this.likes = likes;
@@ -39,7 +38,7 @@ public class Receta implements Comparable<Receta> {
 
     @Override
     public int compareTo(Receta otraReceta) {
-        return Integer.compare(otraReceta.favoritos, this.favoritos);
+        return Integer.compare(otraReceta.likes, this.likes);
     }
 
     @Override

@@ -2,7 +2,7 @@ package Proyecto;
 import java.util.function.Predicate;
 import java.lang.reflect.Array;
 
-public class filtroReceta<T extends Comparable<T>>{
+public class filtroReceta{
 
     @SuppressWarnings("unchecked")
     public static <T> T[] filter(T[] original, Predicate<T> condicion){

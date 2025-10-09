@@ -1,8 +1,6 @@
 package Proyecto;
 import  org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-
-import java.sql.SQLOutput;
 import java.util.function.Predicate;
 
 public class RecetaProcesoTest {
@@ -20,18 +18,11 @@ public class RecetaProcesoTest {
     void testSorting(){
         Receta[] recipes = setupData();
         Receta[] sorted = proceso.sort(recipes);
-
-        System.out.println("--- ORDEN REAL DEL ARREGLO ---");
         System.out.println(java.util.Arrays.toString(sorted));
-        System.out.println("-----------------------------");
+        assertEquals(15, sorted[0].getLikes(), "El mayor número de likes debe estar al inicio.");
 
-        for(int i = 0; i < sorted.length - 1; i++){
-            Receta actual = sorted[i];
-            Receta siguiente = sorted[i + 1];
-            assertTrue(actual.getFavoritos() >= siguiente.getFavoritos());
-        }
-        assertEquals(120, sorted[0].getFavoritos(), "El mayor favorito debe estar al inicio.");
-        assertEquals(10, sorted[sorted.length - 1].getFavoritos(), "El menor favorito debe estar al final.");
+        for (int i = 0; i < sorted.length - 1; i++) {
+            assertTrue(sorted[i].getLikes() >= sorted[i + 1].getLikes(), "El orden de likes es incorrecto.");}
     }
 
     @Test

@@ -1,0 +1,38 @@
+[
+  {
+    "idReceta": 101,
+    "nombreReceta": "Pollo Asado",
+    "likes": 5,
+    "favoritos": 50,
+    "tiempoPreparacion": 15,
+    "tags": "comida",
+    "ingredientes": "pollo, verduras, sal"
+  },
+  {
+    "idReceta": 102,
+    "nombreReceta": "Boneless BBQ",
+    "likes": 15,
+    "favoritos": 120,
+    "tiempoPreparacion": 30,
+    "tags": "Snack",
+    "ingredientes": "pollo,BBQ"
+  },
+  {
+    "idReceta": 103,
+    "nombreReceta": "Papas a la Francesa",
+    "likes": 2,
+    "favoritos": 10,
+    "tiempoPreparacion": 30,
+    "tags": "Snack",
+    "ingredientes": "papas, sal,huevo,harina,aceite"
+  },
+  {
+    "idReceta": 104,
+    "nombreReceta": "Helado Napolitano",
+    "likes": 8,
+    "favoritos": 80,
+    "tiempoPreparacion": 120,
+    "tags": "Postre",
+    "ingredientes": "leche,vainilla, chocolate"
+  }
+]

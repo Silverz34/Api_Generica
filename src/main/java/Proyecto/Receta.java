@@ -9,7 +9,7 @@ public class Receta implements Comparable<Receta> {
     private String tags;
     private String ingredientes;
 
-
+    public Receta() {}
     public Receta(int idReceta, String nombreReceta, int likes, int favoritos, int tiempoPreparacion, String tags, String ingredientes) {
         this.idReceta = idReceta;
         this.nombreReceta = nombreReceta;

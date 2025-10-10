@@ -14,6 +14,10 @@ public class filtroReceta{
                 filtre[count++] = item;
             }
         }
+
+
+
+
         if (count == 0) {return (T[]) Array.newInstance(original.getClass().getComponentType(), 0);}
 
         T[] result = (T[]) Array.newInstance(original.getClass().getComponentType(), count);
@@ -21,6 +25,7 @@ public class filtroReceta{
 
         return result;
     }
+
 
 
 }

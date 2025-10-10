@@ -10,6 +10,8 @@ public class filtroReceta{
         T[] filtre = (T[]) Array.newInstance(original.getClass().getComponentType(), original.length);
         int count = 0;
         for(T item: original){
+
+
             if(condicion.test(item)){
                 filtre[count++] = item;
             }
